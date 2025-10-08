@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICEMEN</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="site-wrapper">
     <header>
         <nav class="navbar">
             <div class="nav-left">
                 <a href="index.html" class="nav-btn">Shop</a>
                 <a href="#" class="nav-btn">Collection</a>
-                <a href="about.html" class="nav-btn">About</a>
+                <a href="pages/about.html" class="nav-btn">About</a>
             </div>
             <div class="nav-center">
                 <h1>ICEMEN</h1>
             </div>
             <div class="nav-right">
                 <a href="#contact" class="nav-btn">Contact</a>
-                <a href="profile.html" class="nav-btn">Profile</a>
+                <a href="pages/profile.html" class="nav-btn">Profile</a>
             </div>
         </nav>
     </header>
     <main>
         <section class="hero">
             <div class="hero-image">
-                <img src="images/orange.jpeg" alt="Winter Sport Orange Jacket" />
+                <img src="media/orange.jpeg" alt="Winter Sport Orange Jacket" />
             </div>
             <div class="hero-text">
                 <h2>UPCOMING<br>WINTER SPORT<br>SALE</h2>
@@ -68,7 +69,7 @@
             </div>
             <div class="product-main">
                 <div class="product-image-holder">
-                    <img src="images/pink-puffer.jpeg" alt="Pink Puffer Jacket" />
+                    <img src="media/pink-puffer.jpeg" alt="Pink Puffer Jacket" />
                 </div>
                 <div class="product-info">
                     <div class="product-title">Chill Rebel Puffer Jacket</div>
@@ -78,7 +79,7 @@
                 </div>
             </div>
                         <div class="product-image-holder">
-                    <img src="images/orange.jpeg" alt="Orange Winter Jacket" />
+                    <img src="media/orange.jpeg" alt="Orange Winter Jacket" />
                 </div>
         </div>
         <div class="product-row">
@@ -97,7 +98,7 @@
             </div>
             <div class="product-main">
                 <div class="product-image-holder">
-                    <img src="images/black-jacket.jpeg" alt="Black Winter Jacket" />
+                    <img src="media/black-jacket.jpeg" alt="Black Winter Jacket" />
                 </div>
                 <div class="product-info">
                     <div class="product-title">Radiant Rush Puffer Jacket</div>
@@ -107,13 +108,13 @@
                 </div>
             </div>
             <div class="product-image-holder">
-                <img src="jacket.webp" alt="Blue Quilted Jacket" />
+                <img src="media/jacket.webp" alt="Blue Quilted Jacket" />
             </div>
         </div>
         <div class="product-row product-row-bottom">
             <div class="product-main">
                 <div class="product-image-holder">
-                    <img src="images/pink-light.jpeg" alt="Light Pink Winter Jacket" />
+                    <img src="media/pink-light.jpeg" alt="Light Pink Winter Jacket" />
                 </div>
                 <div class="product-info">
                     <div class="product-title">Urban Glow</div>
@@ -124,7 +125,7 @@
             </div>
             <div class="product-main">
                 <div class="product-image-holder">
-                    <img src="images/ski_jacket_yellow.webp" alt="Bright Blue Jacket" />
+                    <img src="media/ski_jacket_yellow.webp" alt="Bright Blue Jacket" />
                 </div>
                 <div class="product-info">
                     <div class="product-title">Electric Aura</div>
@@ -135,7 +136,7 @@
             </div>
             <div class="product-main">
                 <div class="product-image-holder">
-                    <img src="images/JOSEPH-MAJKSKTR0035-RED-A.jpg.webp" alt="Taupe Moleskin Jacket" />
+                    <img src="media/JOSEPH-MAJKSKTR0035-RED-A.jpg.webp" alt="Taupe Moleskin Jacket" />
                 </div>
                 <div class="product-info">
                     <div class="product-title">Bold Mirage</div>
@@ -154,12 +155,12 @@
                 <p>Lucas shot down the forbidden ridge, snow spraying like sparks. A hidden rock launched him into the air—too high, too far. For one breathless second he thought he was done... then his board stemmed down, wobbling but holding. Heart racing, he laughed into the wind. He hadn't just survived—he'd conquered the mountain.</p>
             </div>
             <div class="story-image">
-                <img src="images/regles-ski-alpin.jpg" alt="Person in orange puffer jacket with white mask" />
+                <img src="media/regles-ski-alpin.jpg" alt="Person in orange puffer jacket with white mask" />
             </div>
         </article>
         <article class="story story-split">
             <div class="story-image">
-                <img src="images/01-05_35892_C_U_OG_10BenefitsOfSkiingSnowboarding_FullBodyImage1.webp" alt="Black Winter Jacket" />
+                <img src="media/01-05_35892_C_U_OG_10BenefitsOfSkiingSnowboarding_FullBodyImage1.webp" alt="Black Winter Jacket" />
             </div>
             <div class="story-text">
                 <h3>EDGE OF THE SUMMIT</h3>
@@ -185,5 +186,13 @@
             <a href="#" class="social-link">YOUTUBE</a>
         </div>
     </footer>
+</div>
+    <div class="zoom-controls">
+        <button class="play-btn" aria-label="Toggle read mode" onclick="toggleReadMode(this)">▶</button>
+        <button class="zoom-btn zoom-out" aria-label="Zoom out" onclick="zoomOut()">−</button>
+        <button class="zoom-btn zoom-in" aria-label="Zoom in" onclick="zoomIn()">+</button>
+    </div>
+    <script src="js/zoom.js"></script>
+    <script src="js/read.js"></script>
 </body>
 </html>
