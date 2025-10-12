@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca's Mountain</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-wrapper">
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-btn">Main</a>
+                <a href="pages/about.html" class="nav-btn">About</a>
+            </div>
+            <div class="nav-center">
+                <h1>Luca's Mountain</h1>
+            </div>
+            <div class="nav-right">
+                <a href="pages/contact.html" class="nav-btn">Contact</a>
+                <a href="pages/profile.html" class="nav-btn">Profile</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <img src="media/orange.jpeg" alt="Luca on a snowy mountain" />
+            </div>
+            <div class="hero-text">
+                <h2>Luca's Journey</h2>
+                <p>Luca’s Journey began as a personal blog, a space to share stories from his incredible multi-year skiing adventure — a quest that took him from the Alps to the Andes in search of the world’s most breathtaking slopes. It wasn’t just about carving perfect lines or chasing fresh powder. He hiked frozen passes in Patagonia, camped beneath the northern lights in Norway, and even dove into icy waters after a day on the slopes in Japan. Through years of skiing, exploring, and pushing his limits, Luca discovered more than new peaks — he found resilience, peace, and a deep appreciation for the wild beauty of the mountains.</p>
+            </div>
+        </section>
+        <section class="testimonials">
+            <div class="testimonial">
+                <p>The fit is just right—not too tight, not too loose—and the material is super soft. It’s one of those shirts that you’ll reach for again and again. Plus, it holds up great after washing. I’ll definitely be buying more!</p>
+                <div class="testimonial-source">Forbes</div>
+            </div>
+            <div class="testimonial">
+                <p>The fabric is so soft and flows beautifully, and the fit is perfect. It’s versatile enough to dress up or down, making it a staple in my wardrobe.</p>
+                <div class="testimonial-source">The Los Angeles Post</div>
+            </div>
+            <div class="testimonial">
+                <p>These jeans are my new go-to! They hug in all the right places and have just the right amount of stretch. I love the high waist—it’s super flattering.</p>
+                <div class="testimonial-source">alive</div>
+            </div>
+        </section>
+    </main>
+
+    <section class="stories-grid">
+        <article class="story story-wide">
+            <div class="story-text">
+                <h3>THE FORBIDDEN RIDGE</h3>
+                <div class="story-subtitle">Crazy road</div>
+                <p>Lucas shot down the forbidden ridge, snow spraying like sparks. A hidden rock launched him into the air—too high, too far. For one breathless second he thought he was done... then his board stemmed down, wobbling but holding. Heart racing, he laughed into the wind. He hadn't just survived—he'd conquered the mountain.</p>
+            </div>
+            <div class="story-image">
+                <img src="media/regles-ski-alpin.jpg" alt="Person in orange puffer jacket with white mask" />
+            </div>
+        </article>
+        <article class="story story-split">
+            <div class="story-image">
+                <img src="media/01-05_35892_C_U_OG_10BenefitsOfSkiingSnowboarding_FullBodyImage1.webp" alt="Black Winter Jacket" />
+            </div>
+            <div class="story-text">
+                <h3>EDGE OF THE SUMMIT</h3>
+                <p>The trail ended, but Lucas kept climbing. The mountain narrowed into a razor-thin ledge, cliffs yawning on both sides. A loose stone gave way—his boot slipped. For a heartbeat, the world tilted, nothing but air below. He pressed against the rock, breath ragged, then pulled himself back up. When he reached the summit, the sky split open in gold, and he smiled. He hadn't just climbed a mountain—he'd stared into the void and kept going.</p>
+            </div>
+        </article>
+    </section>
+    <footer class="footer" id="contact">
+        <div class="footer-left">
+            <div class="footer-title">
+                <h2>GET IN</h2>
+                <h2>TOUCH</h2>
+            </div>
+            <div class="footer-brand">Luca's Mountain</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms and Conditions</a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="#" class="social-link">FACEBOOK</a>
+            <a href="#" class="social-link">INSTAGRAM</a>
+            <a href="#" class="social-link">YOUTUBE</a>
+        </div>
+    </footer>
+</div>
+    <div class="zoom-controls">
+        <button class="play-btn" aria-label="Toggle read mode" onclick="toggleReadMode(this)">▶</button>
+        <button class="zoom-btn zoom-out" aria-label="Zoom out" onclick="zoomOut()">−</button>
+        <button class="zoom-btn zoom-in" aria-label="Zoom in" onclick="zoomIn()">+</button>
+    </div>
+    <script src="js/zoom.js"></script>
+    <script src="js/read.js"></script>
+</body>
+</html>
