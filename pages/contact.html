@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Luca's Mountain</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="../index.html" class="nav-btn">Shop</a>
+                <a href="../index.html#collection" class="nav-btn">Collection</a>
+                <a href="about.html" class="nav-btn">About</a>
+            </div>
+            <div class="nav-center">
+                <h1>Luca's Mountain</h1>
+            </div>
+            <div class="nav-right">
+                <a href="contact.html" class="nav-btn active">Contact</a>
+                <a href="profile.html" class="nav-btn">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <div class="contact-hero-inner">
+                <h2>CONTACTS</h2>
+                <p>Reach out for partnerships, trips, or general enquiries.</p>
+            </div>
+        </section>
+
+        <section class="contacts-list">
+            <h3>Get in touch</h3>
+            <ul>
+                <li><strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a></li>
+                <li><strong>Instagram:</strong> <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">@yourprofile</a></li>
+                <li><strong>YouTube:</strong> <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener">Luca's Mountain Channel</a></li>
+            </ul>
+        </section>
+
+        <section class="trips-list">
+            <h3>Trips & Destinations</h3>
+            <div class="trips-grid">
+                <article class="trip-card">
+                    <div class="trip-image" style="background-image: url('../media/swizz.jpg');"></div>
+                    <div class="trip-caption">
+                        <h4>Switzerland</h4>
+                        <p>Alpine mountain trips</p>
+                        <ul class="trip-includes">
+                            <li>4-night accommodation (mountain lodge)</li>
+                            <li>Daily breakfast & dinner</li>
+                            <li>Lift pass for 3 days</li>
+                            <li>Guided off-piste day</li>
+                        </ul>
+                        <p class="trip-quality">Excellent for advanced skiers — breathtaking views and expert guides.</p>
+                    </div>
+                </article>
+                <article class="trip-card">
+                    <div class="trip-image" style="background-image: url('../media/almaty.jpg');"></div>
+                    <div class="trip-caption">
+                        <h4>Almaty</h4>
+                        <p>Tien Shan excursions</p>
+                        <ul class="trip-includes">
+                            <li>3-night stay in a mountain guesthouse</li>
+                            <li>Guided hiking & acclimatisation</li>
+                            <li>Transport from Almaty</li>
+                            <li>Equipment rental available</li>
+                        </ul>
+                        <p class="trip-quality">Perfect for adventurous trekkers — immersive local experience.</p>
+                    </div>
+                </article>
+                <article class="trip-card">
+                    <div class="trip-image" style="background-image: url('../media/regles-ski-alpin.jpg');"></div>
+                    <div class="trip-caption">
+                        <h4>Skiing Resorts</h4>
+                        <p>Curated resorts & lessons</p>
+                        <ul class="trip-includes">
+                            <li>Resort transfer</li>
+                            <li>Beginner & intermediate lessons</li>
+                            <li>Equipment storage</li>
+                        </ul>
+                        <p class="trip-quality">Great for families and learners — friendly instructors and safe slopes.</p>
+                    </div>
+                </article>
+                <article class="trip-card">
+                    <div class="trip-image" style="background-image: url('../media/01-05_35892_C_U_OG_10BenefitsOfSkiingSnowboarding_FullBodyImage1.webp');"></div>
+                    <div class="trip-caption">
+                        <h4>Other Destinations</h4>
+                        <p>Custom trips on request</p>
+                        <ul class="trip-includes">
+                            <li>Tailored itinerary</li>
+                            <li>Local guides & contacts</li>
+                            <li>Optional add-ons (photography, heli-ski)</li>
+                        </ul>
+                        <p class="trip-quality">Highly customizable — perfect if you want something unique.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="trips-cta">
+            <button class="cta-btn" type="button">Want another trip? Click here to offer another place!</button>
+        </div>
+
+        <section class="contact-back">
+            <a href="../index.html" class="shop-link">← Back to Home</a>
+        </section>
+
+        <section class="reviews-section">
+            <h3>Traveler Reviews</h3>
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <p class="review-text">"An unforgettable week — the guides were incredible and the scenery was out of this world."</p>
+                    <div class="review-author">— Alex P.</div>
+                </article>
+                <article class="review-card">
+                    <p class="review-text">"Perfect for families. The instructors were patient and my kids loved it."</p>
+                    <div class="review-author">— Maria L.</div>
+                </article>
+                <article class="review-card">
+                    <p class="review-text">"Highly recommended for experienced skiers — great off-piste runs and safety-first guides."</p>
+                    <div class="review-author">— Sven K.</div>
+                </article>
+                <article class="review-card">
+                    <p class="review-text">"Custom itinerary was exactly what we needed — flexible, professional, and fun."</p>
+                    <div class="review-author">— Priya R.</div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+        <div class="zoom-controls">
+            <button class="play-btn" aria-label="Toggle read mode" onclick="toggleReadMode(this)">▶</button>
+            <button class="zoom-btn zoom-out" aria-label="Zoom out" onclick="zoomOut()">−</button>
+            <button class="zoom-btn zoom-in" aria-label="Zoom in" onclick="zoomIn()">+</button>
+        </div>
+        <script src="../js/zoom.js"></script>
+        <script src="../js/read.js"></script>
+    </body>
+    </html>

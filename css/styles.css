@@ -146,20 +146,7 @@
     font-weight: 600;
     margin-bottom: 12px;
 }
-.shop-link {
-    font-size: 1.1rem;
-    color: #111;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: color 0.15s;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-top: 4px;
-}
-.shop-link:hover {
-    color: #7b5cff;
-}
+
 
 .stories-grid {
     background: #fff;
@@ -427,11 +414,105 @@
     opacity: 0.9;
 }
 
+/* Luca stories and gallery */
+.luca-stories {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.about-page { background: linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%); }
+.luca-stories .story {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.luca-stories .story .story-image {
+    flex: 1 1 55%;
+    min-height: 420px;
+    position: relative;
+    overflow: hidden;
+}
+.luca-stories .story .story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* About page: remove any white background flashing behind images */
+body.about-theme #site-wrapper,
+body.about-theme .story-image,
+body.about-theme .story-image img {
+    background: transparent !important;
+}
+
+/* Ensure footer/footer containers don't show boxed white backgrounds on about page */
+body.about-theme .footer,
+body.about-theme header,
+body.about-theme .about-hero-section {
+    background: transparent !important;
+}
+
+/* Remove white backgrounds applied to story containers specifically on the About page */
+body.about-theme .luca-stories .story,
+body.about-theme .luca-stories .story-split,
+body.about-theme .luca-stories .story-wide {
+    background: transparent !important;
+    border-top: none !important;
+}
+
+/* Keep story-text readable over the gradient */
+body.about-theme .luca-stories .story-text {
+    background: transparent !important;
+    padding: 40px 0 !important;
+}
+.luca-stories .story .story-text {
+    flex: 1 1 55%;
+    padding: 8px 0;
+}
+.luca-stories .story-split { flex-direction: row-reverse; }
+
+.luca-gallery {
+    max-width: 1200px;
+    margin: 20px auto 60px auto;
+    padding: 0 20px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.gallery-item img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .luca-stories .story { flex-direction: column; }
+    .luca-stories .story .story-image, .luca-stories .story .story-text { flex: 1 1 auto; }
+    .luca-stories .story .story-image { min-height: 260px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Remove white/boxed backgrounds in story text for the About page */
+.luca-stories .story .story-text,
+.luca-stories .story-split .story-text {
+    background: transparent !important;
+    padding: 0; /* rely on layout spacing */
+}
+
+
 .about-features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: -60px auto 0;
     padding: 0 20px;
     position: relative;
@@ -462,7 +543,7 @@
 
 .gear-showcase {
     padding: 80px 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -500,7 +581,7 @@
 }
 
 .values-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -662,7 +743,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 32px;
     height: 72px;
@@ -754,4 +835,165 @@ header h1 {
 .play-btn.active {
     background: #1f7766;
 }
+
+/* Contact page styles */
+.contact-page {
+    min-height: calc(100vh - 140px);
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+}
+.contact-hero {
+    background: #f1f3f5;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+.contact-hero h2 { font-family: 'Darker Grotesque', Arial, sans-serif; font-size: 2rem; margin: 0; }
+.contacts-list, .trips-list {
+    background: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    margin-bottom: 18px;
+}
+.contacts-list h3, .trips-list h3 {
+    font-family: 'Darker Grotesque', Arial, sans-serif;
+    font-size: 1.6rem;
+    margin: 0 0 12px 0;
+}
+.contacts-list ul, .trips-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contacts-list li, .trips-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+.contacts-list li:last-child, .trips-list li:last-child { border-bottom: none; }
+
+@media (max-width: 600px) {
+    .contact-page { padding: 20px 12px; }
+}
+
+/* Trips grid - large photo placeholders */
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 12px;
+}
+.trip-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.trip-image {
+    width: 100%;
+    /* slightly smaller hero placeholder */
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05) contrast(1.02);
+    transition: transform 0.4s ease, filter 0.25s ease;
+}
+.trip-card:hover .trip-image {
+    transform: scale(1.03);
+    filter: saturate(1.15) contrast(1.05);
+}
+.trip-caption {
+    padding: 18px 16px;
+}
+.trip-caption h4 {
+    margin: 0 0 6px 0;
+    font-family: 'Darker Grotesque', Arial, sans-serif;
+}
+.trip-caption p { margin: 0; color: #555; }
+
+.trip-includes {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 12px 0 0 0;
+    color: #444;
+}
+.trip-includes li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.trip-quality {
+    margin-top: 10px;
+    font-style: italic;
+    color: #6b6b6b;
+    font-size: 0.95rem;
+}
+
+/* Reviews section */
+.reviews-section {
+    margin: 40px auto 80px auto;
+    max-width: 1200px;
+    padding: 0 16px;
+}
+.reviews-section h3 {
+    font-family: 'Darker Grotesque', Arial, sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+.review-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+.review-text {
+    font-size: 1rem;
+    color: #333;
+    margin: 0 0 12px 0;
+}
+.review-author {
+    font-weight: 700;
+    color: #111;
+}
+
+@media (max-width: 900px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+    .trips-grid { grid-template-columns: 1fr; }
+    .trip-image { height: 220px; }
+}
+
+/* Trips CTA button */
+.trips-cta {
+    text-align: center;
+    margin: 22px 0 30px 0;
+}
+.cta-btn {
+    background: linear-gradient(135deg, #7b5cff 0%, #5b4bff 100%);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(91,75,255,0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(91,75,255,0.22); }
+
+@media (max-width: 480px) {
+    .cta-btn { width: 100%; padding: 14px; }
+}
+
 
