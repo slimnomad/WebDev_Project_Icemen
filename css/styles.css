@@ -700,29 +700,6 @@ body.about-theme .luca-stories .story-text {
     color: #222;
     margin: 0;
 }
-.testimonials {
-    display: flex;
-    background: #b6e0fa;
-    padding: 36px 0 24px 0;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 24px;
-}
-.testimonial {
-    flex: 1 1 0;
-    max-width: 350px;
-    text-align: center;
-    color: #222;
-    font-size: 1.05rem;
-    margin: 0 12px;
-}
-.testimonial-source {
-    font-family: 'Darker Grotesque', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 18px;
-    color: #111;
-}
 html {
     scroll-behavior: smooth;
 }
