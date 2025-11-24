@@ -1,4 +1,3 @@
-
 .product-grid {
     background: #ece6de;
     padding: 0;
@@ -216,18 +215,44 @@
 }
 
 .story-split .story-image {
-    order: 1;
-}
-
-.story-split .story-text {
-    order: 2;
-    background: #f8f8f8;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px;
+        /* Logo at top */
+        .logo {
+            display: block;
+            font-size: 2em;
+            text-align: center;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background: #fff;
+            padding: 16px 0 8px 0;
+        }
+        /* Navigation at bottom */
+        nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            background: #fff;
+            z-index: 3;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+            padding: 8px 0;
+            margin: 0;
+        }
+        /* Prevent content overlap */
+        body {
+            padding-top: 70px;
+            padding-bottom: 56px;
+        }
+        /* Responsive main content */
+        .main-content {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
     background: #f8f8f8;
     border-top: 2px solid #eee;
 }
@@ -327,9 +352,20 @@
     gap: 20px;
 }
 
+.profile-page .login-form { /* desktop: inline inputs + button */
+
+    display: flex;
+    flex-direction: column; /* Changed to column for stacking */
+    gap: 20px; /* Adjusted gap for stacked layout */
+}
+
 .form-group {
     position: relative;
 }
+
+.profile-page .form-group { flex: 1 1 0%; min-width: 0; }
+
+.profile-page .form-group { width: 100%; }
 
 .form-group input {
     width: 100%;
@@ -339,6 +375,8 @@
     font-size: 1.1rem;
     transition: border-color 0.3s ease;
     background: #f8f9fa;
+    height: 48px; /* match button visual height */
+    box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -351,7 +389,7 @@
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     border: none;
-    padding: 14px 20px;
+    padding: 12px 20px;
     border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -359,6 +397,11 @@
     transition: transform 0.2s ease;
     font-family: 'Darker Grotesque', Arial, sans-serif;
     letter-spacing: 1px;
+    height: 48px; 
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-btn:hover {
@@ -550,18 +593,38 @@ body.about-theme .luca-stories .story-text {
 .gear-showcase h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 18px; /* tightened spacing */
     color: #1e3c72;
+}
+
+/* Subheading under Our Trips */
+.gear-showcase .values-content {
+    max-width: 900px;
+    margin: 0 auto 6px auto; /* reduced bottom spacing */
+    text-align: center;
+}
+
+.gear-showcase .values-content p {
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: #222;
 }
 
 .gear-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 360px); /* three columns of fixed card width */
     gap: 30px;
+    justify-content: center; /* center the grid within the container */
+    margin: 0 auto; /* ensure centered on page */
 }
 
 .gear-item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 360px;
 }
 
 .gear-symbol {
@@ -621,6 +684,21 @@ body.about-theme .luca-stories .story-text {
     .gear-grid,
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Login form is stacked by default; no special mobile rules required */
+
+@media (max-width: 768px) {
+    .product-row {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        padding: 16px; /* Add padding for better spacing */
+    }
+    .product-feature, .product-main, .product-image-holder {
+        padding: 16px; /* Reduce padding for smaller screens */
+    }
+    .product-title {
+        font-size: 1.2rem; /* Adjust font size for better readability */
     }
 }
 
@@ -722,18 +800,19 @@ header {
     justify-content: space-between;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 32px;
-    height: 72px;
+    padding: 0 20px; /* reduced to give more room */
+    height: 64px; /* slightly shorter header */
 }
 .nav-left, .nav-right {
     display: flex;
-    gap: 24px;
+    gap: 14px; /* reduced gap so extra link fits */
 }
 .nav-center {
-    flex: 1;
+    flex: 1 1 0%; /* allow center to shrink when space is tight */
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 0; /* prevent overflow from long titles */
 }
 header h1 {
     margin: 0;
@@ -747,9 +826,9 @@ header h1 {
     text-decoration: none;
     color: #111;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 1.05rem; /* slightly smaller to help fit */
     font-weight: 500;
-    padding: 8px 12px;
+    padding: 8px 10px; /* slightly narrower padding */
     border-radius: 4px;
     transition: background 0.15s;
 }
@@ -858,9 +937,15 @@ header h1 {
 /* Trips grid - large photo placeholders */
 .trips-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* default: two columns for contact page */
     gap: 18px;
     margin-top: 12px;
+}
+
+/* Modifier: full-width single-column layout (used on Extras page) */
+.trips-grid--full {
+    grid-template-columns: 1fr;
+    gap: 24px;
 }
 .trip-card {
     display: flex;
@@ -870,14 +955,23 @@ header h1 {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
+
+.trip-card--large {
+    grid-column: auto; /* no special spanning in full-width layout */
+}
 .trip-image {
     width: 100%;
-    /* slightly smaller hero placeholder */
+    /* default hero placeholder for grid cards */
     height: 280px;
     background-size: cover;
     background-position: center;
     filter: saturate(1.05) contrast(1.02);
     transition: transform 0.4s ease, filter 0.25s ease;
+}
+
+/* Larger images for full-width (Extras) layout */
+.trips-grid--full .trip-image {
+    height: 420px;
 }
 .trip-card:hover .trip-image {
     transform: scale(1.03);
@@ -889,6 +983,28 @@ header h1 {
 .trip-caption h4 {
     margin: 0 0 6px 0;
     font-family: 'Darker Grotesque', Arial, sans-serif;
+}
+
+/* Make trip location names more prominent */
+.trip-caption h4 {
+    font-size: 1.25rem; /* larger by default */
+    font-weight: 800;
+    color: #0f2540;
+    letter-spacing: 0.2px;
+}
+
+/* Extra large headings for the full-width (Extras) layout */
+.trips-grid--full .trip-caption h4 {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .trip-caption h4 {
+        font-size: 1.15rem;
+    }
+    .trips-grid--full .trip-caption h4 {
+        font-size: 1.25rem;
+    }
 }
 .trip-caption p { margin: 0; color: #555; }
 
@@ -969,8 +1085,462 @@ header h1 {
 }
 .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(91,75,255,0.22); }
 
-@media (max-width: 480px) {
-    .cta-btn { width: 100%; padding: 14px; }
+/* Media Queries for Responsive Design */
+
+@media (max-width: 1200px) {
+    .product-row {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
+@media (max-width: 800px) {
+    .product-row {
+        grid-template-columns: 1fr;
+    }
+    .product-image-holder {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .main-features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Logo styling - shows on mobile */
+.logo {
+    display: none;
+    font-family: 'Darker Grotesque', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+/* Hamburger menu - hidden by default */
+/* Took a while to get this working properly */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 26px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #111;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+}
+
+.hamburger:hover span {
+    background: #7b5cff; /* matches the site purple */
+}
+
+.hamburger:focus {
+    outline: 2px solid #7b5cff;
+    outline-offset: 4px;
+}
+
+/* Mobile Navigation Styles */
+/* Updated Nov 24 - fixed scrolling issues */
+@media (max-width: 600px) {
+    /* Remove any overflow restrictions */
+    body {
+        overflow-x: hidden;
+        overflow-y: auto !important; /* had to add important here */
+        padding: 0;
+        height: auto;
+    }
+    
+    /* Fixed header on mobile - stays at top while scrolling */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Add padding to body to account for fixed header */
+    /* This prevents content from hiding under the header */
+    #site-wrapper {
+        padding-top: 56px;
+    }
+    
+    /* Show logo on mobile - top left */
+    .logo {
+        display: block;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+    
+    /* Hide logo when menu is active - instant hide */
+    .navbar.nav-active .logo {
+        display: none;
+    }
+    
+    /* Show hamburger button on the right side */
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* Adjust navbar layout */
+    .navbar {
+        position: relative;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 56px;
+        padding: 0;
+        max-width: 100%;
+    }
+    
+    /* Hide the logo on mobile - saves space */
+    .nav-center {
+        display: none;
+    }
+    
+    /* Hide navigation by default on mobile */
+    /* Only shows when hamburger is clicked */
+    .nav-left,
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px); /* starts slightly above */
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+    
+    .nav-left {
+        order: 2;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .nav-right {
+        order: 3;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    /* Show navigation when active with smooth transition */
+    .navbar.nav-active .nav-left,
+    .navbar.nav-active .nav-right {
+        display: flex;
+        max-height: 500px; /* enough space for all links */
+        opacity: 1;
+        transform: translateY(0); /* slides down to normal position */
+    }
+    
+    /* Animate hamburger to X when active */
+    /* This took forever to get right lol */
+    .navbar.nav-active .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .navbar.nav-active .hamburger span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    
+    .navbar.nav-active .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+    
+    /* Style navigation buttons for mobile */
+    .nav-btn {
+        padding: 14px 20px;
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        border-bottom: 1px solid #f0f0f0;
+        transition: background 0.2s ease, padding-left 0.2s ease;
+    }
+    
+    .nav-btn:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-btn:hover,
+    .nav-btn:active {
+        background: #f8f8f8;
+        padding-left: 24px; /* slides right a bit on hover */
+    }
+    
+    .nav-btn.active {
+        background: #f0f0f0;
+        border-left: 4px solid #7b5cff;
+        padding-left: 20px;
+    }
+    
+    /* Improve hero section on mobile - make smaller */
+    /* Note to self: tested on iPhone 12 and looks good */
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .hero-image,
+    .hero-text {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+    
+    .hero-image {
+        min-height: 200px;
+        max-height: 250px; /* changed from 350px - was too tall */
+    }
+    
+    .hero-text {
+        padding: 24px 16px;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+    
+    .hero-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Improve story sections on mobile - make smaller */
+    /* Images were way too big before */
+    .story {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .story-text {
+        padding: 24px 16px;
+        order: 2;
+    }
+    
+    .story-text h3 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+    
+    .story-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    
+    .story-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .story-image {
+        min-height: 200px;
+        max-height: 250px;
+        order: 1; /* image goes on top */
+    }
+    
+    .story-split .story-image {
+        order: 1;
+    }
+    
+    /* Better footer spacing on mobile */
+    .footer {
+        padding: 32px 16px;
+        gap: 24px;
+    }
+    
+    .footer-title h2 {
+        font-size: 2rem;
+    }
+    
+    .footer-brand {
+        font-size: 1.8rem;
+    }
+    
+    .social-link {
+        font-size: 1rem;
+    }
+    
+    /* Adjust zoom controls position on mobile */
+    .zoom-controls {
+        right: 12px;
+        bottom: 12px;
+        gap: 6px;
+    }
+    
+    .zoom-btn,
+    .play-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    /* Fix about page elements */
+    .about-hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .about-hero-section {
+        padding: 60px 0;
+    }
+    
+    /* Fix about page story images on mobile */
+    /* Had issues with images not showing - fixed with display block */
+    .luca-stories .story {
+        flex-direction: column !important;
+    }
+    
+    .luca-stories .story .story-image {
+        min-height: 250px !important;
+        max-height: 300px !important;
+        width: 100% !important;
+        order: 1;
+        display: block !important; /* needed this to make images show */
+    }
+    
+    .luca-stories .story .story-image img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .luca-stories .story .story-text {
+        order: 2;
+        width: 100% !important;
+        padding: 24px 16px !important;
+    }
+    
+    .luca-stories .story-split .story-image {
+        order: 1 !important;
+    }
+    
+    /* Fix about page titles on mobile */
+    .luca-stories .story-text h3 {
+        font-size: 1.6rem !important;
+    }
+    
+    .luca-stories .story-text p {
+        font-size: 1rem !important;
+    }
+    
+    /* Fix contact page */
+    .contact-hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Ensure content is scrollable */
+    main {
+        overflow-y: visible;
+        height: auto;
+    }
+    
+    /* Fix athlete spotlights on mobile */
+    /* TODO: test this on different screen sizes */
+    .athlete-story {
+        flex-direction: column !important;
+        padding: 24px 16px !important;
+        gap: 20px !important;
+    }
+    
+    .athlete-details {
+        order: 2 !important;
+        flex: none !important;
+    }
+    
+    .athlete-image {
+        order: 1 !important; /* image first, then text */
+        min-width: 100% !important;
+        max-width: 100% !important;
+        min-height: 280px !important;
+        max-height: 350px !important;
+        flex: none !important;
+    }
+    
+    .athlete-image img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 280px !important;
+        object-fit: cover !important;
+        display: block !important; /* this fixed the image not showing issue */
+    }
+    
+    .athlete-details h4 {
+        font-size: 1.6rem !important;
+    }
+    
+    .athlete-details div,
+    .athlete-details blockquote {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .athlete-details blockquote {
+        padding-left: 12px !important;
+        margin-top: 12px !important;
+    }
+    
+    /* Fix gallery grid on mobile */
+    .gallery-item img {
+        height: 280px;
+    }
+    
+    /* Fix spotlight section spacing */
+    .spotlight-section .story-text {
+        padding: 24px 16px !important;
+    }
+    
+    .spotlight-section .story-text h3 {
+        font-size: 1.8rem !important;
+    }
+    
+    .spotlight-section .story-text p {
+        font-size: 1rem !important;
+    }
+    
+    /* Fix athlete spotlights container */
+    .athlete-spotlights {
+        padding: 0 16px !important;
+    }
+}
+
+/* End of mobile styles - Nov 24 2025 */
 

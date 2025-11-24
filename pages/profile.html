@@ -13,9 +13,16 @@
     <div id="site-wrapper">
     <header>
         <nav class="navbar">
+            <div class="logo">Luca's Mountain</div>
+            <button class="hamburger" aria-label="Toggle navigation" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-left">
                 <a href="../index.html" class="nav-btn">Main</a>
                 <a href="about.html" class="nav-btn">About</a>
+                <a href="Extra.html" class="nav-btn">Extras</a>
             </div>
             <div class="nav-center">
                 <h1>Luca's Mountain</h1>
@@ -66,5 +73,11 @@
     </div>
     <script src="../js/zoom.js"></script>
     <script src="../js/read.js"></script>
+    <script>
+        function toggleNav() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('nav-active');
+        }
+    </script>
 </body>
 </html>
