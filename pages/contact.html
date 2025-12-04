@@ -47,6 +47,67 @@
             </ul>
         </section>
 
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <h3>Send us a Message</h3>
+            <p>Have questions about trips or want to collaborate? Fill out the form below and we'll get back to you shortly.</p>
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="contactName">Name *</label>
+                    <input 
+                        type="text" 
+                        id="contactName" 
+                        name="name" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="nameError"
+                    >
+                    <div id="nameError" class="error-message" aria-live="polite" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Email *</label>
+                    <input 
+                        type="email" 
+                        id="contactEmail" 
+                        name="email" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="emailError"
+                    >
+                    <div id="emailError" class="error-message" aria-live="polite" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="contactPhone" 
+                        name="phone"
+                        aria-describedby="phoneError"
+                    >
+                    <div id="phoneError" class="error-message" aria-live="polite" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactMessage">Message *</label>
+                    <textarea 
+                        id="contactMessage" 
+                        name="message" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="messageError"
+                        rows="6"
+                    ></textarea>
+                    <div id="messageError" class="error-message" aria-live="polite" role="alert"></div>
+                </div>
+
+                <div id="formSuccess" class="success-message" aria-live="polite" role="status"></div>
+
+                <button type="submit" class="contact-submit-btn">Send Message</button>
+            </form>
+        </section>
+
         <section class="trips-list">
             <h3>Trips & Destinations</h3>
             <div class="trips-grid">
@@ -110,67 +171,6 @@
         <div class="trips-cta">
             <button class="cta-btn" type="button">Want another trip? Click here to offer another place!</button>
         </div>
-
-        <!-- Contact Form Section -->
-        <section class="contact-form-section">
-            <h3>Send us a Message</h3>
-            <p>Have questions about trips or want to collaborate? Fill out the form below and we'll get back to you shortly.</p>
-            <form class="contact-form" id="contactForm" novalidate>
-                <div class="form-group">
-                    <label for="contactName">Name *</label>
-                    <input 
-                        type="text" 
-                        id="contactName" 
-                        name="name" 
-                        required 
-                        aria-required="true"
-                        aria-describedby="nameError"
-                    >
-                    <div id="nameError" class="error-message" aria-live="polite" role="alert"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactEmail">Email *</label>
-                    <input 
-                        type="email" 
-                        id="contactEmail" 
-                        name="email" 
-                        required 
-                        aria-required="true"
-                        aria-describedby="emailError"
-                    >
-                    <div id="emailError" class="error-message" aria-live="polite" role="alert"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactPhone">Phone Number</label>
-                    <input 
-                        type="tel" 
-                        id="contactPhone" 
-                        name="phone"
-                        aria-describedby="phoneError"
-                    >
-                    <div id="phoneError" class="error-message" aria-live="polite" role="alert"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactMessage">Message *</label>
-                    <textarea 
-                        id="contactMessage" 
-                        name="message" 
-                        required 
-                        aria-required="true"
-                        aria-describedby="messageError"
-                        rows="6"
-                    ></textarea>
-                    <div id="messageError" class="error-message" aria-live="polite" role="alert"></div>
-                </div>
-
-                <div id="formSuccess" class="success-message" aria-live="polite" role="status"></div>
-
-                <button type="submit" class="contact-submit-btn">Send Message</button>
-            </form>
-        </section>
 
         <section class="contact-back">
             <a href="../index.html" class="shop-link">← Back to Home</a>
