@@ -930,6 +930,142 @@ header h1 {
 }
 .contacts-list li:last-child, .trips-list li:last-child { border-bottom: none; }
 
+/* Contact Form Styles */
+.contact-form-section {
+    background: #fff;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    margin-bottom: 28px;
+    max-width: 700px;
+}
+
+.contact-form-section h3 {
+    font-family: 'Darker Grotesque', Arial, sans-serif;
+    font-size: 1.6rem;
+    margin: 0 0 8px 0;
+    color: #111;
+}
+
+.contact-form-section > p {
+    color: #666;
+    margin: 0 0 24px 0;
+    font-size: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    padding: 12px 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    background: #f9f9f9;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1e3c72;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+}
+
+.contact-form input[type="text"]:invalid:not(:placeholder-shown),
+.contact-form input[type="email"]:invalid:not(:placeholder-shown),
+.contact-form input[type="tel"]:invalid:not(:placeholder-shown),
+.contact-form textarea:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+    background: #fff8f8;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-size: 1rem;
+}
+
+.error-message {
+    font-size: 0.9rem;
+    color: #dc3545;
+    margin-top: 2px;
+    min-height: 1.4rem;
+    display: block;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+.success-message {
+    font-size: 1rem;
+    color: #28a745;
+    padding: 12px 14px;
+    background: #f0fff4;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    min-height: 1.5rem;
+    display: none;
+}
+
+.success-message:not(:empty) {
+    display: block;
+}
+
+.contact-submit-btn {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+.contact-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(30, 60, 114, 0.2);
+}
+
+.contact-submit-btn:active {
+    transform: translateY(0);
+}
+
+.contact-submit-btn:focus {
+    outline: 2px solid #1e3c72;
+    outline-offset: 2px;
+}
+
 @media (max-width: 600px) {
     .contact-page { padding: 20px 12px; }
 }
@@ -1465,6 +1601,36 @@ header h1 {
     /* Fix contact page */
     .contact-hero h2 {
         font-size: 1.6rem;
+    }
+
+    .contact-form-section {
+        padding: 20px 16px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .contact-form-section h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .contact-form {
+        gap: 16px !important;
+    }
+
+    .contact-form label {
+        font-size: 0.95rem !important;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form textarea {
+        font-size: 16px !important; /* prevent zoom on input focus in iOS */
+        padding: 10px 12px !important;
+    }
+
+    .contact-submit-btn {
+        font-size: 1rem !important;
+        padding: 10px 16px !important;
     }
     
     /* Ensure content is scrollable */
